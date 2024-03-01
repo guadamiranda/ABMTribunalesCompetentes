@@ -90,6 +90,10 @@ const Home = () => {
     );
   };
 
+  const abrirModalCrear = () => {
+    setAbrirModal(true)
+  }
+
   return (
     <>
     <div className="container-fluid d-flex justify-content-center mt-2">
@@ -104,6 +108,7 @@ const Home = () => {
               handleSelectComboBoxCircunscripcion={
                 setCircunscripccionSeleccionada
               }
+              abrirModalCrear={abrirModalCrear}
             />
           </div>
           <div className="mt-3">

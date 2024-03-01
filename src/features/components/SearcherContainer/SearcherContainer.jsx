@@ -11,7 +11,8 @@ const SearcherContainer = ({
   onLocalidadChange,
   onClick,
   handleSelectComboBoxDepto,
-  handleSelectComboBoxCircunscripcion
+  handleSelectComboBoxCircunscripcion,
+  abrirModalCrear
 }) => {
 
   return (
@@ -52,7 +53,7 @@ const SearcherContainer = ({
 
           <Button
             type="primary"
-            onClick={onClick}
+            onClick={abrirModalCrear}
             className='buttonSearch'
           >
             Agregar
