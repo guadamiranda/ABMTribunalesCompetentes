@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 import Circunscripciones from '../../../utils/Circunscripciones.json';
 import Departamentos from '../../../utils/Departamento.json';
 import Combobox from "../Combobox/ComboBox"
-import Button from "../Button/Button";
 import "./SearcherContainer.css";
 import React from "react";
-
+import { Button, Input } from "antd";
 
 const SearcherContainer = ({
   localidad,
@@ -16,7 +16,7 @@ const SearcherContainer = ({
 
   return (
     <div className="searcherContainer">
-      <div className="d-flex justify-content-space-between gap-4">
+      <div className="d-flex justify-content-space-between gap-3">
         <div className="d-flex flex-column w-100">
           <span>Localidad</span>
           <input
@@ -30,16 +30,7 @@ const SearcherContainer = ({
               }
             }}
           />
-        </div>
-        <div className="d-flex flex-column w-100">
-          <span>Departamento</span>
-          <Combobox
-            datos={Departamentos}
-            valorAMostrar="name"
-            ningunaOpcion="Ninguno"
-            handleSelect={handleSelectComboBoxDepto}
-          />
-        </div>
+        </div>      
         <div className="d-flex flex-column w-100">
           <span>Circunscripción</span>
           <Combobox
@@ -48,15 +39,25 @@ const SearcherContainer = ({
             ningunaOpcion="Ninguno"
             handleSelect={handleSelectComboBoxCircunscripcion}
           />
-        </div>
-
-        <div className="d-flex mt-3">
-          <Button
-            textoBoton="Buscar"
-            onClick={onClick}
-          />
-        </div>
+        </div>        
       </div>
+      <div className="d-flex justify-content-between mt-2">
+          <Button
+            type="primary"
+            onClick={onClick}
+            className='buttonSearch'
+          >
+            Buscar
+          </Button>
+
+          <Button
+            type="primary"
+            onClick={onClick}
+            className='buttonSearch'
+          >
+            Agregar
+          </Button>
+        </div>
     </div>
   );
 };

@@ -1,0 +1,107 @@
+[
+    {
+      "id": "1",
+      "departamento": "SOBREMONTE",
+      "pedania": "Aguada del Monte",
+      "localidad": "Agua del Río",
+      "tribunal": "Deán Funes",
+      "circunscripcion": "Primera"
+
+    },
+    {
+      "id": "2",
+      "departamento": "Córdoba",
+      "pedania": "Río Ceballos",
+      "localidad": "Bajo del Rosario",
+      "tribunal": "Capital",
+      "circunscripcion": "Novena"
+    },
+    {
+      "id": "3",
+      "departamento": "Unión",
+      "pedania": "Loboy",
+      "localidad": "Balneario",
+      "tribunal": "La Carlota",
+      "circunscripcion": "Segunda"
+    },
+    {
+      "id": "4",
+      "departamento": "Marcos Juárez",
+      "pedania": "Espinillos",
+      "localidad": "Barrio El Panal",
+      "tribunal": "Marcos Juárez",
+      "circunscripcion": "Tercera"
+    },
+    {
+      "id": "5",
+      "departamento": "Ischilin",
+      "pedania": "Manzanas",
+      "localidad": "Cañada del Río Pinto",
+      "tribunal": "Deán Funes",
+      "circunscripcion": "Novena"
+    },
+    {
+      "id": "6",
+      "departamento": "Cruz del Eje",
+      "pedania": "Reducción",
+      "localidad": "Colonia San Gregorio",
+      "tribunal": "Jesús María",
+      "circunscripcion": "Primera"
+    },
+    {
+      "id": "7",
+      "departamento": "Unión",
+      "pedania": "Ascasubi",
+      "localidad": "Colonia La Argentina",
+      "tribunal": "Bell Ville",
+      "circunscripcion": "Tercera"
+    },
+    {
+      "id": "8",
+      "departamento": "Río Primero",
+      "pedania": "Esquina",
+      "localidad": "Isla Larga",
+      "tribunal": "Capital",
+      "circunscripcion": "Primera"
+    },
+    {
+      "id": "9",
+      "departamento": "San Alberto",
+      "pedania": "Toscas",
+      "localidad": "Villa 5 de Abril",
+      "tribunal": "Cosquin",
+      "circunscripcion": "Sexta"
+    },
+    {
+      "id": "10",
+      "departamento": "Santa María",
+      "pedania": "San Isidro",
+      "localidad": "Villa Anizacate",
+      "tribunal": "Alta Gracia",
+      "circunscripcion": "Primera"
+    },
+    {
+        "id": "11",
+        "departamento": "Río Cuarto",
+        "pedania": "Las Higueras",
+        "localidad": "Villa El Chacay",
+        "tribunal": "Río Cuarto",
+        "circunscripcion": "Tercera"
+        },
+        {
+        "id": "12",
+        "departamento": "Río Segundo",
+        "pedania": "Pilar",
+        "localidad": "Villa del Rosario",
+        "tribunal": "Río Segundo",
+        "circunscripcion": "Sexta"
+        },
+        {
+        "id": "13",
+        "departamento": "Tercero Arriba",
+        "pedania": "La Laguna",
+        "localidad": "Villa de María",
+        "tribunal": "Villa María",
+        "circunscripcion": "Sexta"
+        }
+  ]

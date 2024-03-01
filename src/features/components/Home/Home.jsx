@@ -1,71 +1,116 @@
-import SearcherContainer from '../SearcherContainer/SearcherContainer';
+import SearcherContainer from "../SearcherContainer/SearcherContainer";
 import { verTodasLasSedes } from "../../services/ConsultaSedes";
-import Button from '../Button/Button';
-import Table from '../Table/Table';
-import { useState } from 'react';
-import './home.css';
+import { Button, Input } from "antd";
+import { useState } from "react";
+import "./home.css";
+import data from "../../../utils/Localidades.json";
+//<PlusOutlined />
+import TableC from "../TableC/TableC";
+
+const columns = [
+  {
+    title: "Id",
+    dataIndex: "id",
+  },
+  {
+    title: "Departamento",
+    dataIndex: "departamento",
+  },
+  {
+    title: "Pedania",
+    dataIndex: "pedania",
+  },
+  {
+    title: "Localidad",
+    dataIndex: "localidad",
+  },
+  {
+    title: "Circunscripcion",
+    dataIndex: "circunscripcion",
+  },
+  {
+    title: "Tribunal",
+    dataIndex: "tribunal",
+  },
+];
 
 const Home = () => {
-    const [localidad, setLocalidad] = useState("")
-    const [departamentoSeleccionado, setDepartamentoSeleccionado] = useState("")
-    const [circunscripcionSeleccionada, setCircunscripccionSeleccionada] = useState("")
-    const [sedes, setSedes] = useState("")
+  const [localidad, setLocalidad] = useState("");
+  const [departamentoSeleccionado, setDepartamentoSeleccionado] = useState("");
+  const [circunscripcionSeleccionada, setCircunscripccionSeleccionada] =
+    useState("");
+  const [sedes, setSedes] = useState("");
 
-    console.log(sedes)
-
-    const dataLoad = () => {
-        //setIsLoading(true);
-        const body = {
-          idDepartamentoGlobal: departamentoSeleccionado === "" ? "" : departamentoSeleccionado.data.id,
-          idCircunscripcionGlobal: circunscripcionSeleccionada === "" ? "" : circunscripcionSeleccionada.data.id,
-          localidad: localidad.trim(),
-        };
-        console.log(localidad)
-    
-        verTodasLasSedes(body)
-          .then((res) => {
-            console.log('res', res)
-            setSedes(res.lista);
-            setCurrentData(res.lista.slice(0, pageSize));
-          })
-          .finally(() => {
-            setIsLoading(false);
-          })
-          .catch((error) => {
-            if (error.request.status === 0) {
-              console.log("No se pudo obtener");
-            }
-          });
+  const dataLoad = () => {
+    //setIsLoading(true);
+    const body = {
+      idDepartamentoGlobal:
+        departamentoSeleccionado === "" ? "" : departamentoSeleccionado.data.id,
+      idCircunscripcionGlobal:
+        circunscripcionSeleccionada === ""
+          ? ""
+          : circunscripcionSeleccionada.data.id,
+      localidad: localidad.trim(),
     };
+    console.log(localidad);
 
-    return(
-        <div className='container-fluid d-flex justify-content-center'>
-            <div className='tableContainer'>
-                <header className='row px-3 pt-3 pb-1'>
-                    <div className='col fs-4 mainTitle'>Localidades</div>
-                    <div className='col d-flex justify-content-end'><Button textoBoton='Crear Localidad' onClick={() => console.log('Hi')}/></div>
-                </header>
-                <div className='w-100 d-flex justify-content-center'>
-                    <div className='divider'></div>
-                </div>
-                <body className='px-3'>
-                    <div>
-                        <SearcherContainer 
-                            localidad={localidad}
-                            onLocalidadChange={setLocalidad} 
-                            onClick={dataLoad}
-                            handleSelectComboBoxDepto={setDepartamentoSeleccionado}
-                            handleSelectComboBoxCircunscripcion={setCircunscripccionSeleccionada}
-                        />
-                    </div>
-                    <div>
-                        <Table />
-                    </div>
+    verTodasLasSedes(body)
+      .then((res) => {
+        console.log("res", res);
+        setSedes(res.lista);
+        setCurrentData(res.lista.slice(0, pageSize));
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error.request.status === 0) {
+          console.log("No se pudo obtener");
+        }
+      });
+  };
 
-                </body>
-            </div>
+  const actions = () => {
+    return (
+      <>
+        <div
+          className="contenedorBotonesGrilla"
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Button type="primary" className="buttonSearch">
+            Editar / Ver  
+          </Button>
         </div>
-    )
-}
+      </>
+    );
+  };
 
-export default Home
+  return (
+    <div className="container-fluid d-flex justify-content-center mt-2">
+      <div className="tableContainer">
+        <div className="px-3">
+          <div>
+            <SearcherContainer
+              localidad={localidad}
+              onLocalidadChange={setLocalidad}
+              onClick={dataLoad}
+              handleSelectComboBoxDepto={setDepartamentoSeleccionado}
+              handleSelectComboBoxCircunscripcion={
+                setCircunscripccionSeleccionada
+              }
+            />
+          </div>
+          <div className="mt-3">
+            <TableC columns={columns} data={data} actions={actions} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
