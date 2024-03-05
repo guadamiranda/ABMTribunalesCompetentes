@@ -1,6 +1,5 @@
-import TitlePage from "../features/components/Title/TitlePage";
-import Header from "../features/components/Header/Header";
-import Home from "../features/components/Home/Home";
+import Header from "../components/Header/Header";
+import Home from "../pages/Home/Home";
 import React from "react";
 import "./Layout.css";
 

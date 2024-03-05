@@ -1,14 +1,11 @@
-import SearcherContainer from "../SearcherContainer/SearcherContainer";
-import { verTodasLasSedes } from "../../services/ConsultaSedes";
-import ModalComp from '../Modal/Modal';
-import CrearLocalidad from '../CrearLocalidad/CrearLocalidad';
-
-import { Button, Input } from "antd";
+import SearcherContainer from "../../components/SearcherContainer/SearcherContainer";
+import ModalComp from '../../components/Modal/Modal';
+import CrearLocalidad from '../../components/CrearLocalidad/CrearLocalidad';
+import { Button } from "antd";
 import { useState } from "react";
 import "./home.css";
-import data from "../../../utils/Localidades.json";
-//<PlusOutlined />
-import TableC from "../TableC/TableC";
+import data from "../../utils/Localidades.json";
+import TableC from "../../components/TableC/TableC";
 
 const Home = () => {
     const [localidad, setLocalidad] = useState("")
@@ -16,8 +13,6 @@ const Home = () => {
     const [circunscripcionSeleccionada, setCircunscripccionSeleccionada] = useState("")
     const [sedes, setSedes] = useState("")
     const [abrirModal, setAbrirModal] = useState(false)
-
-    console.log(sedes)
 
     const columns = [
       {
@@ -46,7 +41,7 @@ const Home = () => {
       },
     ];
     
-    const dataLoad = () => {
+    /* const dataLoad = () => {
         //setIsLoading(true);
         const body = {
           idDepartamentoGlobal: departamentoSeleccionado === "" ? "" : departamentoSeleccionado.data.id,
@@ -69,7 +64,7 @@ const Home = () => {
               console.log("No se pudo obtener");
             }
           });
-    };
+    }; */
 
   const actions = () => {
     return (
@@ -103,7 +98,7 @@ const Home = () => {
             <SearcherContainer
               localidad={localidad}
               onLocalidadChange={setLocalidad}
-              onClick={dataLoad}
+              onClick={() => console.log('hi')}
               handleSelectComboBoxDepto={setDepartamentoSeleccionado}
               handleSelectComboBoxCircunscripcion={
                 setCircunscripccionSeleccionada

@@ -8,12 +8,13 @@ const Combobox = ({
   id = "id",
 
 }) => {
+  console.log('datiños', datos[0].id)
   const handleChange = (opcionSeleccionada) => {
     if (opcionSeleccionada.target.value != "") {
       const selectedValue = opcionSeleccionada.target.value;
 
       const selectedOption = datos.find(
-        (option) => option.data.id == selectedValue
+        (option) => option.id == selectedValue
       );
       handleSelect(selectedOption);
     } else {
@@ -32,11 +33,11 @@ const Combobox = ({
         <option value="">{ningunaOpcion}</option>
         {datos.map((dato) => (
           <option
-            key={dato.data[valorAMostrar]}
-            value={dato.data[id]}
+            key={dato[valorAMostrar]}
+            value={dato[id]}
           >
             {" "}
-            {dato.data[valorAMostrar]}{" "}
+            {dato[valorAMostrar]}{" "}
           </option>
         ))}
       </select>
