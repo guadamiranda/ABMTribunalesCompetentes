@@ -1,6 +1,6 @@
 import AxiosInstance from "./axios";
 
-export const verTodasLosTribunales = async (IdCircunscripcion, Descripcion, PaginaIndice, PaginaRegistros) => {
+export const verTodosLosTribunales = async (IdCircunscripcion, Descripcion, PaginaIndice, PaginaRegistros) => {
   try {
     const { data } = await AxiosInstance.post(`https://desarrollo.tribunales.gov.ar/mapajudicialnet/api/Tribunales/Buscar/?IdCircunscripcion=${IdCircunscripcion}&Descripcion=${Descripcion}&PaginaIndice=${PaginaIndice}&PaginaRegistros=${PaginaRegistros}`, {
       "Content-Type": "application/json",
